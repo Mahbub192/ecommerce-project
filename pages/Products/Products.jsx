@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Product from "./Product";
 
 import Image from "next/image";
-import PaginationControls from "../componants/PaginationControls";
 import { useRouter } from "next/router";
+import PaginationControls from "../componants/PaginationControls";
 
 const ProductPage = () => {
   const [items, setItems] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const productSectionRef = useRef(null);
 
   const router = useRouter();
   const searchParams = new URLSearchParams(router.asPath.split("?")[1]);
@@ -24,6 +26,7 @@ const ProductPage = () => {
       .then((data) => {
         setItems(data.slice(start, end));
         setTotalPages(Math.ceil(data.length / per_page));
+        setLoading(false);
       });
   };
 
@@ -31,17 +34,33 @@ const ProductPage = () => {
     fetchProducts();
   }, [page, per_page]);
 
+  const scrollToProductSection = () => {
+    window.scrollTo(0, 1500);
+  };
+
   return (
-    <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-4 ">
-      {items.map((p) => (
-        <Product key={p.id} product={p}></Product>
-      ))}
+    <div>
+      <div ref={productSectionRef}>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+            {items.map((p) => (
+              <Product key={p.id} product={p}></Product>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Pagination */}
       <PaginationControls
         hasNextPage={page < totalPages}
         hasPrevPage={page > 1}
         currentPage={page}
         totalPages={totalPages}
         perPage={per_page}
+        onNextPage={scrollToProductSection} // Scroll to the product section
+        onPrevPage={scrollToProductSection} // Scroll to the product section
       />
     </div>
   );

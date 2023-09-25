@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const PaginationControls = ({ hasNextPage, hasPrevPage, currentPage, totalPages, perPage }) => {
+const PaginationControls = ({ hasNextPage, hasPrevPage, currentPage, totalPages, perPage,onNextPage ,onPrevPage}) => {
   const router = useRouter();
 
   return (
     <div className="flex gap-2">
       {hasPrevPage && (
-        <Link href={`/?page=${currentPage - 1}&per_page=${perPage}`}>
+        <Link onClick={onPrevPage()}  href={`/?page=${currentPage - 1}&per_page=${perPage}`}>
           <p className="text-gray-500 p-1">{"<<"}</p>
         </Link>
       )}
@@ -17,7 +17,7 @@ const PaginationControls = ({ hasNextPage, hasPrevPage, currentPage, totalPages,
       </div>
 
       {hasNextPage && (
-        <Link href={`/?page=${currentPage + 1}&per_page=${perPage}`}>
+        <Link onClick={onNextPage()} href={`/?page=${currentPage + 1}&per_page=${perPage}`}>
           <p className="text-gray-500 p-1">{">>"}</p>
         </Link>
       )}
