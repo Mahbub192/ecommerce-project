@@ -8,12 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "server-json": "json-server --watch Products.json --port 5000"
-
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "autoprefixer": "10.4.16",
+    "axios": "^1.5.0",
     "json-server": "^0.17.3",
     "next": "13.5.2",
     "postcss": "8.4.30",

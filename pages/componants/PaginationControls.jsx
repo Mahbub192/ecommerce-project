@@ -1,27 +1,24 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from "react";
 
-const PaginationControls = ({ hasNextPage, hasPrevPage, currentPage, totalPages, perPage,onNextPage ,onPrevPage}) => {
-  const router = useRouter();
-
+const PaginationControls = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
+  const pageCount = Math.ceil(itemsCount / pageSize);
+  
+  if (pageCount <= 1) return null;
+  
   return (
-    <div className="flex gap-2">
-      {hasPrevPage && (
-        <Link onClick={onPrevPage()}  href={`/?page=${currentPage - 1}&per_page=${perPage}`}>
-          <p className="text-gray-500 p-1">{"<<"}</p>
-        </Link>
-      )}
-
-      <div className="pt-1">
-        {currentPage} / {totalPages}
+    <nav>
+      <div className="join">
+        {Array.from({ length: pageCount }).map((_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => onPageChange(index + 1)}
+            className={index + 1 === currentPage ? "join-item btn btn-active" : "join-item btn"}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
-
-      {hasNextPage && (
-        <Link onClick={onNextPage()} href={`/?page=${currentPage + 1}&per_page=${perPage}`}>
-          <p className="text-gray-500 p-1">{">>"}</p>
-        </Link>
-      )}
-    </div>
+    </nav>
   );
 };
 
