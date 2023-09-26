@@ -49,7 +49,7 @@ const ProductPage = () => {
 
       {/* Pagination */}
       <PaginationControls
-        itemsCount={posts.length}
+        itemsCount={posts.length} 
         pageSize={pageSize}
         currentPage={currentPage}
         onPageChange={handlePageChange}

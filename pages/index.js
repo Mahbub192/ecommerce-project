@@ -5,19 +5,20 @@ import Header from "./Shared/header";
 import Equipment from "./Equipment/Equipment";
 import Add from "./Add/add";
 import OfferCard from "./Products/OfferCard";
+import Footer from "./Shared/Footer/footer";
 
 
 
 const index = () => {
   return (
-    <div className="bg-[#EDF2FD]">
+    <div >
     <Header/>
     <Navbar/>
     <Banner/>
     <Equipment/>
     <Add></Add>
     <OfferCard></OfferCard>
-    
+    <Footer></Footer>
     </div>
   );
 };
