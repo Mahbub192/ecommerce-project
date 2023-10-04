@@ -1,11 +1,11 @@
-import { useState } from "react";;
-import Banner from "./Banner/banner";
-import Navbar from "./Shared/navbar";
-import Header from "./Shared/header";
-import Equipment from "./Equipment/Equipment";
 import Add from "./Add/add";
-import OfferCard from "./Products/OfferCard";
+import Banner from "./Home/Banner/banner";
+import Equipment from "./Home/Equipment/Equipment";
+import OfferCard from "./Home/Products/OfferCard";
 import Footer from "./Shared/Footer/footer";
+import Header from "./Shared/header";
+import Navbar from "./Shared/navbar";
+;
 
 
 

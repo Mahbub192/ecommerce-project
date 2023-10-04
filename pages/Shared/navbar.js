@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
-
+import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
+  const { loginWithRedirect, logout } = useAuth0();
   return (
     <div>
       <div className="navbar bg-base-100 border shadow-lg py-4">
@@ -81,11 +82,23 @@ const Navbar = () => {
               <Link href="/">Order</Link>
             </li>
             <li>
-              <Link href="/">SignUp</Link>
+              <Link href="/">
+                <button
+                  onClick={() =>
+                    logout({
+                      logoutParams: { returnTo: window.location.origin },
+                    })
+                  }
+                >
+                  Log Out
+                </button>
+              </Link>
             </li>
-       
-         
-    
+            <li>
+              <Link href="/">
+                <button onClick={() => loginWithRedirect()}>Log In</button>
+              </Link>
+            </li>
 
             {/* <li>
              <Link to="/signup">SignUp</Link>  

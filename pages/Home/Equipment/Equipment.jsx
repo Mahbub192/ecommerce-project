@@ -1,9 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { FaStar, FaStarHalf } from "react-icons/fa";
-import Deal from "../componants/Deal";
-import PersonalEquipment from "../componants/personalEquipment";
-import Arrival from "../componants/Arrival";
+import Arrival from "../../componants/Arrival";
+import Deal from "../../componants/Deal";
+import PersonalEquipment from "../../componants/personalEquipment";
 
 const Equipment = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import nothing from "../../public/Home/Product/nothing.png";
+import nothing from "../../../public/Home/Product/nothing.png";
 import Image from "next/image";
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import Product from "./Product";

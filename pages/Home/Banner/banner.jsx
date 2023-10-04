@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import banner from "../../public/Home/Banner/banner.png"
-import banner from "../../public/Home/Banner/banner.png";
-import banner2 from "../../public/Home/Banner/slider2.webp";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { MdHealthAndSafety } from "react-icons/md";
-import { IoIosPersonAdd } from "react-icons/io";
-import { FcSmartphoneTablet } from "react-icons/fc";
-import { FcSportsMode } from "react-icons/fc";
-import { FcHome } from "react-icons/fc";
-import { BsFillCartCheckFill } from "react-icons/bs";
-import { IoMdShirt } from "react-icons/io";
 import { AiTwotoneCar } from "react-icons/ai";
-import { LuBaby } from "react-icons/lu";
 import { BiCategory } from "react-icons/bi";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { FcHome, FcSmartphoneTablet, FcSportsMode } from "react-icons/fc";
+import { IoIosPersonAdd, IoMdShirt } from "react-icons/io";
+import { LuBaby } from "react-icons/lu";
+import { MdHealthAndSafety, MdKeyboardDoubleArrowRight } from "react-icons/md";
+import banner from "../../../public/Home/Banner/banner.png";
+import banner2 from "../../../public/Home/Banner/slider2.webp";
 
 // Import Swiper styles
 import "swiper/css";
@@ -24,8 +19,8 @@ import "swiper/css/pagination";
 
 import Image from "next/image";
 import { Autoplay, Navigation } from "swiper/modules";
-import RoundCard from "../componants/RoundCard";
-import RightSideBar from "../componants/RightSideBar";
+import RightSideBar from "../../componants/RightSideBar";
+import RoundCard from "../../componants/RoundCard";
 
 const categories = [
   

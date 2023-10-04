@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import Product from "./Product";
-import PaginationControls from "../componants/PaginationControls";
-import { paginate } from "../utils/paginate";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import PaginationControls from "../../componants/PaginationControls";
+import { paginate } from "../../utils/paginate";
+import Product from "./Product";
 
 const ProductPage = () => {
   const pageSize = 12;
